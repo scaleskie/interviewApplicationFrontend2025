@@ -41,6 +41,11 @@ export class ProductComponent implements OnInit{
   filteredProducts(filteredProducts: Product[]){
     this.products = filteredProducts;
   }
+
+  clearFilters(){
+    this.getProducts();
+  }
+
   getProducts(){
     this.productService.getProducts().subscribe(data => {
       this.products = data;

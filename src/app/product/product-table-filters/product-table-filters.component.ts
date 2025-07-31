@@ -10,8 +10,10 @@ export class ProductTableFiltersComponent {
 
   @Input() products: Product[] = [];
   @Output() filteredProducts = new EventEmitter<any>();
+  @Output() clearFilters = new EventEmitter<any>();
 
   filterName = '';
+  filteredFlag = false;
 
   filter(){
     this.products = this.products.filter(product => {
@@ -19,7 +21,12 @@ export class ProductTableFiltersComponent {
     });
     console.log("here")
     console.log(this.products)
-    this.filteredProducts.emit(this.products)
+    this.filteredFlag = true;
+    this.filteredProducts.emit(this.products);
+  }
+
+  clearFilter(){
+    this.clearFilters.emit();
   }
 
 }
