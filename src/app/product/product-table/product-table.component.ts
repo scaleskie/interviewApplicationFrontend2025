@@ -26,6 +26,7 @@ export class ProductTableComponent implements OnInit{
   ngOnInit() {
     this.cols = this.productService.getColumns();
   }
+
    viewRowData(rowData: any){
      this.viewRowItem.emit(rowData)
    }
@@ -45,12 +46,12 @@ export class ProductTableComponent implements OnInit{
     })
   }
 
-  getSpecificRow(id: number){
+/*  getSpecificRow(id: number){
     this.productService.getProductByID(1).subscribe(data => {
       console.log("get by ID")
       console.log(data)
     });
-  }
+  }*/
 
   editModal(rowData: any){
     this.newItem = rowData;

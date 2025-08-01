@@ -2,9 +2,20 @@
   <p-table [columns]="cols" [value]="products" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header" let-columns>
       <tr>
-        <th *ngFor="let col of columns">
+        <th *ngFor="let col of columns, index as i">
+
+          <div *ngIf="i !== columns.length - 3">
           {{ col.header }}
+          </div>
+          <div *ngIf="i == columns.length - 3">
+            <th pSortableColumn="quantity">
+                Quantity
+                <p-sortIcon field="quantity" />
+            </th>
+          </div>
+
         </th>
+
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">

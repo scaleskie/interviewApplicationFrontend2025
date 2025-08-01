@@ -1,29 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Events} from "../../events";
 
 @Component({
   selector: 'app-upcoming-events-table',
   templateUrl: './upcoming-events-table.component.html',
   styleUrl: './upcoming-events-table.component.scss'
 })
-export class UpcomingEventsTableComponent {
+export class UpcomingEventsTableComponent implements OnInit {
+  @Input() events: Events[] = [];
+  @Output() viewRowEvent = new EventEmitter<any>();
 
-  cols = [
-    { field: 'name', header: 'Name' },
-    { field: 'date', header: 'Date' },
-  ];
+  cols: Object[] = [];
 
-  events = [
-    {
-      name: "Wedding",
-      date: "11/23/2023"
-    },
-    {
-      name: "Birthday Party",
-      date: "12/23/2023"
-    },
-    {
-      name: "Fundraiser",
-      date: "12/25/2023"
-    },];
+  ngOnInit() {
+    this.cols = this.getColumns();
+    console.log(this.events)
+  }
 
+  getColumns(): Object[] {
+    return this.cols = [
+      {field: 'id', header: 'ID'},
+      {field: 'name', header: 'Name'},
+      {field: 'type', header: 'Type'},
+    ];
+  }
 }

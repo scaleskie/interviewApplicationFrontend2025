@@ -32,7 +32,7 @@ fdescribe('ProductComponent', () => {
     const fixture = TestBed.createComponent(ProductComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h3').textContent).toContain('Product');
+    expect(compiled.querySelector('h3').textContent).toContain('Products');
   })
 
   it("should toggle edit item", () => {

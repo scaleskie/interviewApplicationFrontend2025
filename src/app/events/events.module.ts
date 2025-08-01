@@ -12,8 +12,8 @@ import {EventsRoutingModule} from "./events-routing.module";
 import {
   UpcomingEventsTableComponent
 } from "./upcoming-events/upcoming-events-table/upcoming-events-table.component";
-import {TableModule} from "primeng/table";
 import {SharedModule} from "../shared/modules/shared.module";
+import {ProductModule} from "../product/product.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import {SharedModule} from "../shared/modules/shared.module";
   ],
   imports: [
     EventsRoutingModule,
-    SharedModule
+    SharedModule,
+    ProductModule
   ],
   exports: [
     UpcomingEventsComponent,
