@@ -16,9 +16,9 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('/api/item/allItems');
   }
-  getProductByID(id: number): Observable<Product> {
+/*  getProductByID(id: number): Observable<Product> {
     return this.http.get<Product>('/api/item/getItem/' + id);
-  }
+  }*/
   deleteProductByID(id: number): Observable<Product> {
     return this.http.delete<Product>('/api/item/deleteItem/' + id);
   }

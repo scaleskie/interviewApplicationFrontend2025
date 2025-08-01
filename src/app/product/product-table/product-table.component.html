@@ -28,7 +28,7 @@
             <div class="pi pi-fw pi-pencil" (click)="editModal(rowData);" ></div>
           </div>
           <div *ngIf="i === columns.length-1">
-            <div class="pi pi-fw pi-trash"(click)="deleteRowData(rowData)" ></div>
+            <div class="pi pi-fw pi-trash" (click)="deleteRowData(rowData)" ></div>
           </div>
         </td>
       </tr>
@@ -37,7 +37,7 @@
 </div>
 
 
-<p-dialog header="Deleted Item from Child:" [(visible)]="editFlag" [style]="{width: '50vw'}">
+<p-dialog header="Edit Item from Child:" [(visible)]="editFlag" [style]="{width: '50vw'}">
   <div class="field">
     <label class="block" >Category Name</label>
     <input type="text" placeholder="Edit Category Name" pInputText [(ngModel)]="categoryName" />
