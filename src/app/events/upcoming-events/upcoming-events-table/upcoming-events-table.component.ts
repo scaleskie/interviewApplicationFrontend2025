@@ -14,7 +14,6 @@ export class UpcomingEventsTableComponent implements OnInit {
 
   ngOnInit() {
     this.cols = this.getColumns();
-    console.log(this.events)
   }
 
   getColumns(): Object[] {
