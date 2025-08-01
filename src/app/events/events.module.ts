@@ -13,7 +13,6 @@ import {
   UpcomingEventsTableComponent
 } from "./upcoming-events/upcoming-events-table/upcoming-events-table.component";
 import {SharedModule} from "../shared/modules/shared.module";
-import {ProductModule} from "../product/product.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import {ProductModule} from "../product/product.module";
   imports: [
     EventsRoutingModule,
     SharedModule,
-    ProductModule
   ],
   exports: [
     UpcomingEventsComponent,
