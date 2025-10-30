@@ -17,7 +17,7 @@ export class ProductTableFiltersComponent {
 
   filter(){
     this.products = this.products.filter(product => {
-      return product.name === this.filterName;
+      return product.name.toLowerCase() === this.filterName.toLowerCase();
     });
     console.log("here")
     console.log(this.products)
